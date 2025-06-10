@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let produtos = [];
+let continuar = true;
+
+while (continuar) {
+    let nome = prompt("Nome do produto:");
+    let valorUnitario = parseFloat(prompt("Valor unitário do produto (use ponto como separador decimal):"));
+    let quantidade = parseInt(prompt("Quantidade comprada:"), 10);
+
+    produtos.push({
+        nome: nome,
+        valorUnitario: valorUnitario,
+        quantidade: quantidade,
+        valorTotal: valorUnitario * quantidade
+    });
+
+    continuar = prompt("Deseja cadastrar outro produto? (sim/não)").toLowerCase() === "sim";
+}
+
+let notaFiscal = "Lista de produtos comprados:\n";
+let totalCompra = 0;
+
+produtos.forEach(produto => {
+    notaFiscal += `- ${produto.nome}: ${produto.quantidade} x R$ ${produto.valorUnitario.toFixed(2)} = R$ ${produto.valorTotal.toFixed(2)}\n`;
+    totalCompra += produto.valorTotal;
+});
+
+notaFiscal += `\nTotal da compra: R$ ${totalCompra.toFixed(2)}`;
+alert(notaFiscal);
+    </script>
+</body>
+</html>

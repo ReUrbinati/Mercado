@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nota Fiscal - Produtos Comprados</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Nota Fiscal Online</h1>
+                     
+    </header>
+
+    <main>
+        <section id="cadastro">
+            <h2>Cadastrar Produto</h2>
+            <form id="produto-form">
+                <label for="nome">Nome do produto:</label>
+                <input type="text" id="nome" required>
+
+                <label for="valor">Valor unitário:</label>
+                <input type="number" id="valor" step="0.01" required>
+
+                <label for="quantidade">Quantidade:</label>
+                <input type="number" id="quantidade" required>
+
+                <button type="submit" aria-label="Cadastrar produto">Cadastrar</button>
+            </form>
+        </section>
+
+        <aside>
+            <h3>Informações Adicionais</h3>
+            <p>Todos os produtos cadastrados serão listados abaixo.</p>
+        </aside>
+
+        <section id="nota-fiscal">
+            <h2>Nota Fiscal</h2>
+            <article>
+                <ul id="lista-produtos"></ul>
+                <p><strong>Total da compra:</strong> <span id="total-compra">R$ 0,00</span></p>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Nota Fiscal Online.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
